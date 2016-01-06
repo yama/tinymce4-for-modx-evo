@@ -7,11 +7,14 @@
  * @category    plugin
  * @version     4.3.2-b2
  * @license     http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
+ * @internal    @properties 
  * @internal    @events OnRichTextEditorRegister,OnRichTextEditorInit,OnInterfaceSettingsRender 
  * @internal    @modx_category Manager and Admin
+ * @internal    @legacy_names TinyMCE
  * @internal    @installset base
  *
- * @author Dmi3yy, Yama / updated: 2016-01-06
+ * @author Yama / updated: 2015-01-16
+ * @author Dmi3yy / updated: 2016-01-06
  */
 
 require MODX_BASE_PATH.'assets/plugins/tinymce4/plugin.tinymce.php';
