@@ -45,25 +45,32 @@ class TinyMCE4
 		$cfg['selector']     = $params['elements'];
 		$cfg['content_css']  = "{$mce_url}style/content.css";
 		
-		$cfg['plugins'] = '[
-        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
-        "searchreplace wordcount visualblocks visualchars code fullscreen",
-        "insertdatetime media nonbreaking save table contextmenu directionality",
-        "emoticons template paste textcolor codesample colorpicker textpattern imagetools"
-    	]';
-
- 
-    	$cfg['toolbar1'] = "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image";
-    	$cfg['toolbar2'] =  "print preview media codesample | forecolor backcolor emoticons";
-    	$cfg['image_advtab'] = 'true';
 
     	$cfg['document_base_url'] = MODX_SITE_URL;
-		    /*templates: [
-		        {title: 'Test template 1', content: 'Test 1'},
-		        {title: 'Test template 2', content: 'Test 2'}
-		    ]*/
+		/*templates: [
+		    {title: 'Test template 1', content: 'Test 1'},
+		    {title: 'Test template 2', content: 'Test 2'}
+		]*/
+		
+		$sfArray[] = array('title'=>'Paragraph','format'=>'p');
+		$sfArray[] = array('title'=>'Header 1','format'=>'h1');
+        $sfArray[] = array('title'=>'Header 2','format'=>'h2');
+        $sfArray[] = array('title'=>'Header 3','format'=>'h3');
+        $sfArray[] = array('title'=>'Header 4','format'=>'h4');
+        $sfArray[] = array('title'=>'Header 5','format'=>'h5');
+        $sfArray[] = array('title'=>'Header 6','format'=>'h6');
+        $sfArray[] = array('title'=>'Div','format'=>'div');
+		$sfArray[] = array('title'=>'Pre','format'=>'pre');
 
-
+		if(isset($params['style_formats'])) {	
+			$styles_formats = explode('|', $params['style_formats']);
+			foreach ($styles_formats as $val) {
+				$style = explode(',', $val);
+				$sfArray[] = array('title'=>$style['0'], 'selector'=>'a,strong,em,p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,tr,span,img', 'classes'=>$style['1']);
+			}
+		}
+		$cfg['style_formats'] = json_encode($sfArray);
+		
 
 		if($lang_code!=='en')
 			$cfg['language_url'] = "{$mce_url}tinymce/langs/{$lang_code}.js";
@@ -72,13 +79,13 @@ class TinyMCE4
 		{
 			if(strpos($v,"'")!==false)
 				$v = str_replace("'", "\\'", $v);
-			if ($k == 'plugins'){
+			if (in_array($k, array('plugins','style_formats'))){
 				$cfg[$k] = "    {$k}:{$v}";
 			}else{
 				$cfg[$k] = "    {$k}:'{$v}'";
 			}
 		}
-		
+
 		$ph['mce_url'] = $mce_url;
 		$ph['init'] = join(",\n",$cfg);
 		$tpl = file_get_contents("{$mce_path}tpl/tinymce_init.tpl");

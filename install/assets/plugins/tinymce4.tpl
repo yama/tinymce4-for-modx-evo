@@ -5,9 +5,9 @@
  * Javascript WYSIWYG Editor
  *
  * @category    plugin
- * @version     4.3.2-b2
+ * @version     4.3.2-b3
  * @license     http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
- * @internal    @properties 
+ * @internal    @properties &style_formats=Style_formats;textarea;left,alignleft|right,alignright
  * @internal    @events OnRichTextEditorRegister,OnRichTextEditorInit,OnInterfaceSettingsRender 
  * @internal    @modx_category Manager and Admin
  * @internal    @legacy_names TinyMCE
