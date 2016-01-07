@@ -13,3 +13,6 @@ TinyMCE4 for MODX Evolution
 Changelog:
 4.3.2-b3
 - fix custom class list  (set in plugin settings)
+
+4.3.2-b4
+- add modxlink plugin
