@@ -44,8 +44,6 @@ class TinyMCE4
 		$cfg = array();
 		$cfg['selector']     = $params['elements'];
 		$cfg['content_css']  = "{$mce_url}style/content.css";
-		
-
     	$cfg['document_base_url'] = MODX_SITE_URL;
 		/*templates: [
 		    {title: 'Test template 1', content: 'Test 1'},
@@ -61,7 +59,6 @@ class TinyMCE4
         $sfArray[] = array('title'=>'Header 6','format'=>'h6');
         $sfArray[] = array('title'=>'Div','format'=>'div');
 		$sfArray[] = array('title'=>'Pre','format'=>'pre');
-
 		if(isset($params['style_formats'])) {	
 			$styles_formats = explode('|', $params['style_formats']);
 			foreach ($styles_formats as $val) {
@@ -70,7 +67,13 @@ class TinyMCE4
 			}
 		}
 		$cfg['style_formats'] = json_encode($sfArray);
-		
+
+		$cfg['relative_urls'] = false;
+		$cfg['image_caption'] = true;
+    	$cfg['menubar'] = false;
+    	$cfg['toolbar_items_size'] = 'small';
+    	$cfg['image_advtab'] = true;
+
 
 		if($lang_code!=='en')
 			$cfg['language_url'] = "{$mce_url}tinymce/langs/{$lang_code}.js";
