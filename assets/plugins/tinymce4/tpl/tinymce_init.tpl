@@ -4,7 +4,7 @@
     [+init+],
     
     
-    plugins : "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen spellchecker insertdatetime media nonbreaking save table contextmenu directionalityemoticons template paste textcolor codesample colorpicker textpattern imagetools paste modxlink",
+    plugins : "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen spellchecker insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor codesample colorpicker textpattern imagetools paste modxlink",
     //autosave autoresize
     paste_word_valid_elements: 'b,strong,i,em,h1,h2,table',  
     //template forecolor backcolor           
