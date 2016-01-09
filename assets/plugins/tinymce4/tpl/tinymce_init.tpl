@@ -2,19 +2,7 @@
 <script type="text/javascript">
   tinymce.init({
     [+init+],
-    
-    
-    plugins : "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen spellchecker insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor codesample colorpicker textpattern imagetools paste modxlink",
-    //autosave autoresize
-    paste_word_valid_elements: 'b,strong,i,em,h1,h2,table',  
-    //template forecolor backcolor           
-        
-    toolbar1 : "undo redo | cut copy paste | searchreplace | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent blockquote | styleselect",
-    toolbar2 : "link unlink anchor image media codesample table | hr removeformat | subscript superscript charmap | nonbreaking | visualchars visualblocks print preview fullscreen code",
-    
-
-    file_browser_callback: function(field, url, type, win) {
-        
+    file_browser_callback: function(field, url, type, win) {       
         if (type == 'image'){type = 'images';}
         if (type == 'file'){type = 'files';}
         tinyMCE.activeEditor.windowManager.open({

@@ -73,6 +73,11 @@ class TinyMCE4
     	$cfg['menubar'] = false;
     	$cfg['toolbar_items_size'] = 'small';
     	$cfg['image_advtab'] = true;
+    	$cfg['plugins'] = "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen spellchecker insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor codesample colorpicker textpattern imagetools paste modxlink";
+    	$cfg['paste_word_valid_elements'] =  'b,strong,i,em,h1,h2,table';
+    	//template forecolor backcolor           
+    	$cfg['toolbar1'] = "undo redo | cut copy paste | searchreplace | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent blockquote | styleselect";
+    	$cfg['toolbar2'] = "link unlink anchor image media codesample table | hr removeformat | subscript superscript charmap | nonbreaking | visualchars visualblocks print preview fullscreen code";
 
 
 		if($lang_code!=='en')
