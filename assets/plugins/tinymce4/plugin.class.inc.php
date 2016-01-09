@@ -87,7 +87,7 @@ class TinyMCE4
 		{
 			if(strpos($v,"'")!==false)
 				$v = str_replace("'", "\\'", $v);
-			if (in_array($k, array('plugins','style_formats'))){
+			if (in_array($k, array('style_formats'))){
 				$cfg[$k] = "    {$k}:{$v}";
 			}else{
 				$cfg[$k] = "    {$k}:'{$v}'";
